@@ -17,11 +17,11 @@ jobs:
       - name: Extract project
         run: |
           mkdir -p app
-          unzip -q hasabati_project.zip -d app
-          if [ -d "app/hasabati_fixed" ]; then
+          unzip -q SamBuileder.zip -d app
+          if [ -d "app/SamBuileder_fixed" ]; then
             shopt -s dotglob
-            cp -R app/hasabati_fixed/* app/
-            rm -rf app/hasabati_fixed
+            cp -R app/SamBuileder_fixed/* app/
+            rm -rf app/SamBuileder_fixed
           fi
 
       - name: Set up Flutter
@@ -42,5 +42,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: حساباتي-apk
+          name: SamBuileder-apk
           path: app/build/app/outputs/flutter-apk/app-release.apk
